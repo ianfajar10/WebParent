@@ -8,6 +8,14 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'public/assets/vendor/apexcharts/apexcharts.min.js',
+                'public/assets/vendor/chart.js/chart.min.js',
+                'public/assets/vendor/echarts/echarts.min.js',
+                'public/assets/vendor/quill/quill.min.js',
+                'public/assets/vendor/simple-datatables/simple-datatables.js',
+                'public/assets/vendor/tinymce/tinymce.min.js',
+                'public/assets/vendor/php-email-form/validate.js',
+                'assets/js/main.js'
             ],
             refresh: true,
         }),

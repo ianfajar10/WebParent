@@ -24,8 +24,7 @@
                     button: false,
                     timer: 2500
                 }).then(function() {
-                    router.push('/admin/home')
-                    console.log(response.data);
+                    router.push('/')
                 });
             } else {
                 swal({

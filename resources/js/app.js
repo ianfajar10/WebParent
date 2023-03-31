@@ -15,9 +15,33 @@ import { createApp } from 'vue';
 
 // const app = createApp({});
 
-import app from './components/App.vue';
+import App from './components/App.vue';
 import router from './router';
-createApp(app).use(router).mount("#app");
+
+import VueChartkick from 'vue-chartkick'
+import 'chartkick/chart.js'
+
+import vSelect from 'vue-select' //import vue-select
+import "vue-select/dist/vue-select.css"; //import css vue-select
+
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+const apps = createApp(App);
+if (await localStorage) {
+    if (localStorage.getItem('token')) {
+        apps.config.globalProperties.$user = JSON.parse(localStorage.token)
+    }
+}
+
+apps.component('v-select', vSelect)
+
+apps
+.use(router)
+.use(VueSweetalert2)
+.use(vSelect)
+.use(VueChartkick)
+.mount("#app");
 // app.component('example-component', ExampleComponent);
 
 /**
